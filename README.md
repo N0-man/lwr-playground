@@ -1,6 +1,6 @@
 # LWC Boilerplate Example
 
-The **LWC Boilerplate** example contains the minimum code needed to get a simple Single Page Application (SPA) on LWR running.
+The **LWC Boilerplate** example contains the minimum code needed to get a simple Single Page Application (SPA) on LWR running. This was bootstrap using `yarn create lwr`
 
 ## Project Setup
 
@@ -12,7 +12,7 @@ src/
   │   └── recipes-logo.png
   |   └── favicon.ico
   └── modules/          // lwc modules
-      └── example/
+      └── ui/           // The root app should always be one level nested otherwise it have issues loading
           └── app/
               ├── app.css
               ├── app.html
@@ -31,9 +31,9 @@ The LWR server is configured in `lwr.config.json`, at the root of the project. T
     "lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
     "routes": [
         {
-            "id": "example",
+            "id": "my-app",
             "path": "/",
-            "rootComponent": "example/app"
+            "rootComponent": "ui/app"
         }
     ],
     "assets": [
@@ -58,7 +58,7 @@ yarn install
 yarn dev # dev:compat for AMD format
 ```
 
-Open the site at [http://localhost:3000](http://localhost:3000)
+Open the site at [http://localhost:8090](http://localhost:8090)
 
 ## Statically Generate and Preview the Site
 
@@ -66,5 +66,3 @@ Open the site at [http://localhost:3000](http://localhost:3000)
 yarn build # dev:prod-compat for AMD format
 yarn start
 ```
-
-Open the site at [http://localhost:3000](http://localhost:3000)

@@ -15,8 +15,10 @@
     "stage:prod-compat": "yarn build:prod-compat && yarn start"
   },
   "dependencies": {
-    "lwc": "2.38.1",
-    "lwr": "0.9.4"
+    "lwc": "^2.48.0",
+    "lwr": "^0.9.4",
+    "jest-environment-jsdom": "^29.5.0",
+    "lwc-recipes-oss-ui-components": "^0.3.2"
   },
   "engines": {
     "node": ">=16.0.0 <20"
