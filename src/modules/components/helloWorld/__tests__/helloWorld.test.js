@@ -1,7 +1,7 @@
 import { createElement } from 'lwc';
-import HelloWorld from 'ui/helloWorld';
+import HelloWorld from 'components/helloWorld';
 
-describe('recipe-hello-world', () => {
+describe('components-hello-world', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
         while (document.body.firstChild) {
@@ -13,14 +13,14 @@ describe('recipe-hello-world', () => {
         const EXPECTED = 'Test';
 
         // Create element
-        const element = createElement('recipe-hello-world', {
+        const element = createElement('components-hello-world', {
             is: HelloWorld
         });
         document.body.appendChild(element);
 
         // Verify default greeting
         let div = element.shadowRoot.querySelector('div');
-        expect(div.textContent).not.toBe(`Hello, ${EXPECTED}!`);
+        expect(div.textContent).not.toBe(`Ciao, ${EXPECTED}!`);
 
         // Trigger new greeting
         const inputEl = element.shadowRoot.querySelector('ui-input');
@@ -32,12 +32,12 @@ describe('recipe-hello-world', () => {
         // ending the test and fail the test if the promise rejects.
         return Promise.resolve().then(() => {
             // Verify displayed greeting
-            expect(div.textContent).toBe(`Hello, ${EXPECTED}!`);
+            expect(div.textContent).toBe(`Ciao, ${EXPECTED}!`);
         });
     });
 
     it('is accessible', () => {
-        const element = createElement('recipe-hello-world', {
+        const element = createElement('components-hello-world', {
             is: HelloWorld
         });
 

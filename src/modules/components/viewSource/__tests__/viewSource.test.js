@@ -1,7 +1,7 @@
 import { createElement } from 'lwc';
-import ViewSource from 'recipe/viewSource';
+import ViewSource from 'components/viewSource';
 
-describe('recipe-view-source', () => {
+describe('components-view-source', () => {
     afterEach(() => {
         // The jsdom instance is shared across test cases in a single file so reset the DOM
         while (document.body.firstChild) {
@@ -11,12 +11,12 @@ describe('recipe-view-source', () => {
 
     it('renders an a href that points to the LWC Recipes OSS GitHub repo', () => {
         const BASE_URL =
-            'https://github.com/trailheadapps/lwc-recipes-oss/tree/main/src/modules/';
+            'https://github.com/N0-man/lwr-playground/tree/main/src/modules/';
         const LWC_PARAMETER = 'superLwc';
         const RESULT = BASE_URL + LWC_PARAMETER;
 
         // Create initial element
-        const element = createElement('recipe-contact-list', {
+        const element = createElement('components-contact-list', {
             is: ViewSource
         });
         // Set public properties
@@ -29,7 +29,7 @@ describe('recipe-view-source', () => {
     });
 
     it('is accessible', () => {
-        const element = createElement('recipe-view-source', {
+        const element = createElement('components-view-source', {
             is: ViewSource
         });
 
